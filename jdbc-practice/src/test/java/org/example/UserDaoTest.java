@@ -10,9 +10,10 @@ import java.sql.SQLException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class UserDaoTest {
+public class UserDaoTest {
+
     @BeforeEach
-    public void setup() {
+    void setUp() {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
         populator.addScript(new ClassPathResource("db_schema.sql"));
         DatabasePopulatorUtils.execute(populator, ConnectionManager.getDataSource());
